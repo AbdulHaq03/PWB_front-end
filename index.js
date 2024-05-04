@@ -10,7 +10,7 @@ var app = express();
 var uname = "";
 var urole = "";
 var uid = "";
-const port = process.env.PORT || 8000
+const port = 8080
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
