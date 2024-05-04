@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+            background-image: url("bgimage.jpg");
+            background-size: cover;
+		}
+        button {
+			background-color:  #529e54;
+            color: #f6ffee;
+			border: none;
+			padding: 20px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		.glow-button {
+  			background-color:#529e54 ;
+			color: #fff;
+			border: none;
+			padding: 12px 24px;
+			font-size: 16px;
+			border-radius: 4px;
+			animation: glow 1s ease-in-out infinite alternate;
+		}
+		@keyframes glow {
+				from {
+					box-shadow: 0 0 0 0 rgba(99, 52, 219, 0.7);
+				}
+				to {
+					box-shadow: 0 0 15px 2px rgba(106, 237, 158, 0.96);
+				}
+				}
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			margin: 10px 0;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #529e54;
+			color: #afdf82;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+        .carousel{
+            height: 500px;
+        }
+        .carousel-item img{
+            height: 500px;
+            object-fit: cover;
+        }
+        .carousel-caption{
+            color: #ff9d14;
+            
+        }
+        h1 {
+            margin: 0 auto;
+        }
+        /* Reset default margin and padding for the entire page */
+
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id = "navbarNav">
+            <a class="navbar-brand" href="#">
+                PWS
+            </a>
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/">Home Page</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/oldUser">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/newUser">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       <!-- <div>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                  <img src="" alt="" width="30" height="24">
+                </a>
+                <a id = "username">USER NAME</a>
+                 take input from a node js file and display here, keep the id = username
+            </div>
+        </div> -->
+    </nav>
+    <!-- The carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img22.jpg" class="d-block w-100" alt="img12.jpg">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 >IMPROVE WITH US</h2>
+                <h2>Manage <br> to perfection.</h2> <!--You can change text as yu wish-->
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img12.jpg" class="d-block w-100" alt="img22.jpg">
+            <div class="carousel-caption d-none d-md-block">
+                <H1>GROW</H1>
+                <h1>Manage at a better productive level</h1>
+            </div>
+          </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div> <!-- Carousel desgin end-->
+    
+    <!-- Lower Section-->
+    <section class = "features">
+        <div class = "container">
+            <div>
+                <h1> LETS GET STARTED</h1>
+                <form action="/newUser">
+                    <input type="submit" value="Sign Up Today" class="glow-button">
+                </form>
+            </div>
+            <div>
+                <p>
+                    Are you tired of juggling multiple tasks, deadlines, and teams, while struggling to keep your projects on track? Say goodbye to the chaos and welcome ProjectPro, the ultimate solution for efficient project management.<br>
+Streamline Your Workflow: ProjectPro provides a centralized platform where you can plan, execute, and monitor your projects seamlessly. With its intuitive interface and robust features, you can effortlessly manage tasks, allocate resources, and track progress all in one place.
+<br>Enhanced Collaboration: Collaboration lies at the heart of successful project management. ProjectPro empowers your team members to communicate effectively, share files, and stay updated on project-related activities. Say goodbye to lengthy email chains and embrace real-time collaboration for enhanced productivity.
+<br>Comprehensive Project Planning: With ProjectPro, you can create detailed project plans with clear milestones, deadlines, and dependencies. Break down complex projects into manageable tasks, assign responsibilities, and set priorities. ProjectPro's smart scheduling feature optimizes your project timeline, ensuring efficient resource allocation and timely delivery.
+<br>Powerful Task Management: Stay organized and never miss a deadline again with ProjectPro's robust task management capabilities. Assign tasks, track progress, and set reminders to ensure every task is completed on time. Monitor individual and team performance effortlessly and address bottlenecks proactively.
+<br>Real-Time Insights: Making informed decisions is crucial for project success. ProjectPro offers comprehensive reporting and analytics features that provide real-time insights into project progress, resource utilization, and budget allocation. Stay ahead of potential risks and make data-driven decisions to keep your projects on track.<br>
+Integration Made Easy: ProjectPro seamlessly integrates with popular productivity tools like G Suite, Microsoft Office 365, and more. Sync your calendars, import data, and collaborate effortlessly with your existing software ecosystem.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    document.querySelectorAll(".nav-link").forEach((link) => {
+    if (link.href === window.location.href) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+    }
+    });
+</script>
+</body>
+</html>

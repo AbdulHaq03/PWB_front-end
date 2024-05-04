@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+            background-image: url("bgimage.jpg");
+            background-size: cover;
+		}
+        button {
+			background-color:  #529e54;
+            color: #afdf82;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		.glow-button {
+  			background-color:#529e54 ;
+			color: #fff;
+			border: none;
+			padding: 12px 24px;
+			font-size: 16px;
+			border-radius: 4px;
+			animation: glow 1s ease-in-out infinite alternate;
+		}
+		@keyframes glow {
+				from {
+					box-shadow: 0 0 0 0 rgba(99, 52, 219, 0.7);
+				}
+				to {
+					box-shadow: 0 0 15px 2px rgba(106, 237, 158, 0.96);
+				}
+				}
+		form {
+			background-color: #385f48;
+			padding: 20px;
+			max-width: 400px;
+			margin: 50px auto;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(55, 105, 92, 0.6);
+		}
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			margin: 10px 0;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #529e54;
+			color: #afdf82;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		.nav-link.active {
+  			color: white;
+		}
+
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id = "navbarNav">
+            <a class="navbar-brand" href="#">
+                PWS
+            </a>
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/">Home Page</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/oldUser">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/newUser">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       <!-- <div>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                  <img src="" alt="" width="30" height="24">
+                </a>
+                <a id = "username">USER NAME</a>
+                 take input from a node js file and display here, keep the id = username
+            </div>
+        </div> -->
+    </nav>
+	<form action="/login" method="get">
+		<h2 style="color:rgb(106, 250, 224);">Login</h2>
+		<label for="email" style="color: rgb(106, 250, 224);">Email:</label>
+		<input type="text" id="email" name="email" required>
+		<label for="password" style="color:rgb(106, 250, 224)">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<input type="submit" value="Login" class="glow-button">
+	</form>
+    <form action="/newUser">
+        <h2 style="color:rgb(106, 250, 224);">Dont have an account</h2>
+        <button type = "btn" href="signup.html" class="glow-button">sign up</button>
+	</form>
+
+	<script>
+		document.querySelectorAll(".nav-link").forEach((link) => {
+    	if (link.href === window.location.href) {
+        		link.classList.add("active");
+        		link.setAttribute("aria-current", "page");
+    	}
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<style>
+		h1{
+			color: #6df041;
+		}
+		h2{
+			color: rgb(246, 82, 0);
+		}
+		body {
+			font-family: Arial, sans-serif;
+        	background-image: url("bgimage.jpg"); 	
+            background-size: cover;
+		}
+		.my-div{
+			background-color: rgb(240, 222, 222);
+			column-count: 1;
+			column-gap: 20px;
+			width: 250px;
+			align-self: center;
+		}
+        button {
+			background-color:  #529e54;
+            color: #afdf82;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+		}
+		.glow-button {
+  			background-color:#529e54 ;
+			color: #fff;
+			border: none;
+			width: 75%;
+			padding: 12px 24px;
+			font-size: 16px;
+			border-radius: 4px;
+			animation: glow 1s ease-in-out infinite alternate;
+			margin-left: 25px;
+		}
+		@keyframes glow {
+				from {
+					box-shadow: 0 0 0 0 rgba(99, 52, 219, 0.7);
+				}
+				to {
+					box-shadow: 0 0 15px 2px rgba(106, 237, 158, 0.96);
+				}
+				}
+
+		form {
+			background-image: url("img3.jpg");
+			padding: 20px;
+			max-width: 400px;
+			margin: 50px auto;
+			border-radius: 25px;
+			box-shadow: 0px 0px 500px rgba(45, 70, 63, 0.6);
+		}
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			margin: 10px 0;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #529e54;
+			color: #afdf82;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		.container{
+			display: flex;
+			align-items: center;
+		}
+		.other{
+			flex:1;
+		}
+        li{
+            color: aquamarine;
+        }
+        p{
+            color: aquamarine;
+        }
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id = "navbarNav">
+            <a class="navbar-brand" href="#">
+                PWS
+            </a>
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin_home">Home Page</a>
+                    </li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin_task">Tasks</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin_create_user">Create User</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin_teams">Teams</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin_projects">Projects</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+
+       <div>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                  <img src="user1.png" alt="" width="40" height="40">
+                </a>
+				<a id="username"><%= UserName %></a>
+                 <!-- take input from a node js file and display here, keep the id = username-->
+				 <div class="dropdown show">
+					<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Menu
+					</a>
+				  
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					  <a class="dropdown-item" href="/">LogOut</a>
+					  <a class="dropdown-item" href="/admin_home">Home Page</a>
+					</div>
+				</div>
+			</div> 
+        </div>
+    </nav>
+	<form class = "container">
+		<div>
+			<h1> Welcome Admin</h1>
+			<div>
+				<h2>Here is a list of Teams</h2>
+			</div>
+		</div>
+	</form>
+    <form>
+         <h1><%= pageTitle %>' Teams in Domain </h1>
+             <p> as of : <%= currentDate %>.</p>
+    <ul>
+        <% for (let i = 0; i < results.length; i++) { %>
+            <li>[<%= results[i].id %>] [<%= results[i].lid %>]</li>
+        <% } %>
+    </ul> 
+    </form>
+		
+	<script>
+		document.querySelectorAll(".nav-link").forEach((link) => {
+    	if (link.href === window.location.href) {
+        		link.classList.add("active");
+        		link.setAttribute("aria-current", "page");
+    	}
+		});
+	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
