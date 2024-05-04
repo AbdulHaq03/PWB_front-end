@@ -1,2 +1,3 @@
-To start use:
-npm start or node index.js
+**To start use:**
+- npm start 
+- node index.js
