@@ -10,6 +10,7 @@ var app = express();
 var uname = "";
 var urole = "";
 var uid = "";
+const port = process.env.PORT || 8000
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -726,4 +727,4 @@ app.get('/signup', function(req, res){
     });
 });
 
-app.listen(8080);
+app.listen(port);
